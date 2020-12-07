@@ -1,0 +1,6 @@
+https://www.microsoft.com/fr-fr/sql-server/sql-server-downloads
+Lien tele: https://go.microsoft.com/fwlink/?linkid=866658
+Capture1
+Accepter la licence
+Capture2 : il faut au min 6589 espace dispoinble en disque dure
+Installer SSMS 
