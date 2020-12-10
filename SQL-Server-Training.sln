@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormAppPapyrus", "00 - Papyrus\WinFormAppPapyrus\WinFormAppPapyrus.csproj", "{6D0FE8F7-9F06-43DC-978C-E2FFF2935886}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Papyrus", "00 - Papyrus", "{F24D9258-B33C-4C0D-8245-9BE2EE5E0999}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D0FE8F7-9F06-43DC-978C-E2FFF2935886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D0FE8F7-9F06-43DC-978C-E2FFF2935886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D0FE8F7-9F06-43DC-978C-E2FFF2935886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D0FE8F7-9F06-43DC-978C-E2FFF2935886}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6D0FE8F7-9F06-43DC-978C-E2FFF2935886} = {F24D9258-B33C-4C0D-8245-9BE2EE5E0999}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AEF847D-225D-4994-85B5-DD512BD88E47}
+	EndGlobalSection
+EndGlobal
