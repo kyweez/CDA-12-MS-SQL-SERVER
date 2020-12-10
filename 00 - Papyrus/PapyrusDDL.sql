@@ -1,14 +1,11 @@
 ﻿--DROP DATABASE IF EXISTS db_papyrus;
 --GO
 --CREATE DATABASE db_papyrus;
---USE db_papyrus;
-
 
 DROP TABLE IF EXISTS t_order_lines;
 DROP TABLE IF EXISTS t_products;
 DROP TABLE IF EXISTS t_orders;
 DROP TABLE IF EXISTS t_suppliers;
-
 
 CREATE TABLE t_suppliers
 (
@@ -35,7 +32,6 @@ CREATE TABLE t_orders
 	CONSTRAINT FK_supplier_in_order FOREIGN KEY (fk_id_supplier) REFERENCES t_suppliers(id_supplier)
 );
 
-
 CREATE TABLE t_products
 (
 	id_product INT IDENTITY(1,1) NOT NULL,
@@ -43,7 +39,8 @@ CREATE TABLE t_products
 	product_real_stock INT NOT NULL,
 	product_critical_stock INT NOT NULL,
 	product_annual_output INT NOT NULL,
-	product_measurement_unit INT NOT NULL,
+	product_measurement_unit VARCHAR(4) NOT NULL,
+	product_price INT NOT NULL,
 	fk_id_supplier INT NOT NULL,
 	--Primary key--
 	CONSTRAINT PK_product PRIMARY KEY (id_product),
@@ -51,13 +48,14 @@ CREATE TABLE t_products
 	CONSTRAINT FK_supplier_in_product FOREIGN KEY (fk_id_supplier) REFERENCES t_suppliers(id_supplier)
 );
 
-
 CREATE TABLE t_order_lines
 (
 	fk_id_order INT NOT NULL,
 	fk_id_product INT NOT NULL,
 	line_product_quantity INT NOT NULL,
+	line_product_label VARCHAR(50) NOT NULL,
 	line_delivery_date DATE NOT NULL,
+	line_product_price INT NOT NULL,
 	--Foreign keys--
 	CONSTRAINT FK_order_in_line FOREIGN KEY (fk_id_order) REFERENCES t_orders(id_order),
 	CONSTRAINT FK_product_in_line FOREIGN KEY (fk_id_product) REFERENCES t_products(id_product),
