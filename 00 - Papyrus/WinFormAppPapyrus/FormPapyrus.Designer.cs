@@ -32,69 +32,65 @@ namespace WinFormAppPapyrus
             this.textBoxServer = new System.Windows.Forms.TextBox();
             this.textBoxDatabase = new System.Windows.Forms.TextBox();
             this.buttonConnect = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.buttonDisconnect = new System.Windows.Forms.Button();
+            this.buttonQuit = new System.Windows.Forms.Button();
             this.labelServer = new System.Windows.Forms.Label();
             this.labelDatabase = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
+            this.richTextBoxMessage = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // textBoxServer
             // 
             this.textBoxServer.Location = new System.Drawing.Point(132, 35);
-            this.textBoxServer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxServer.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxServer.Name = "textBoxServer";
             this.textBoxServer.Size = new System.Drawing.Size(298, 24);
             this.textBoxServer.TabIndex = 0;
+            this.textBoxServer.TextChanged += new System.EventHandler(this.InputChanged);
             // 
             // textBoxDatabase
             // 
             this.textBoxDatabase.Location = new System.Drawing.Point(132, 97);
-            this.textBoxDatabase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDatabase.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDatabase.Name = "textBoxDatabase";
             this.textBoxDatabase.Size = new System.Drawing.Size(298, 24);
             this.textBoxDatabase.TabIndex = 1;
+            this.textBoxDatabase.TextChanged += new System.EventHandler(this.InputChanged);
             // 
             // buttonConnect
             // 
             this.buttonConnect.Location = new System.Drawing.Point(132, 153);
-            this.buttonConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonConnect.Margin = new System.Windows.Forms.Padding(4);
             this.buttonConnect.Name = "buttonConnect";
             this.buttonConnect.Size = new System.Drawing.Size(112, 32);
             this.buttonConnect.TabIndex = 2;
             this.buttonConnect.Text = "Connect";
             this.buttonConnect.UseVisualStyleBackColor = true;
+            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
             // 
-            // button2
+            // buttonDisconnect
             // 
-            this.button2.Location = new System.Drawing.Point(318, 153);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 32);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Disconnect";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonDisconnect.Enabled = false;
+            this.buttonDisconnect.Location = new System.Drawing.Point(318, 153);
+            this.buttonDisconnect.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonDisconnect.Name = "buttonDisconnect";
+            this.buttonDisconnect.Size = new System.Drawing.Size(112, 32);
+            this.buttonDisconnect.TabIndex = 3;
+            this.buttonDisconnect.Text = "Disconnect";
+            this.buttonDisconnect.UseVisualStyleBackColor = true;
+            this.buttonDisconnect.Click += new System.EventHandler(this.buttonDisconnect_Click);
             // 
-            // button3
+            // buttonQuit
             // 
-            this.button3.Location = new System.Drawing.Point(318, 518);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 32);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Quit";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(42, 259);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox3.Size = new System.Drawing.Size(388, 229);
-            this.textBox3.TabIndex = 5;
+            this.buttonQuit.Location = new System.Drawing.Point(318, 213);
+            this.buttonQuit.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonQuit.Name = "buttonQuit";
+            this.buttonQuit.Size = new System.Drawing.Size(112, 32);
+            this.buttonQuit.TabIndex = 4;
+            this.buttonQuit.Text = "Quit";
+            this.buttonQuit.UseVisualStyleBackColor = true;
+            this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
             // 
             // labelServer
             // 
@@ -125,23 +121,33 @@ namespace WinFormAppPapyrus
             this.labelStatus.TabIndex = 8;
             this.labelStatus.Text = "Connection status : Closed";
             // 
+            // richTextBoxMessage
+            // 
+            this.richTextBoxMessage.Enabled = false;
+            this.richTextBoxMessage.ForeColor = System.Drawing.Color.Red;
+            this.richTextBoxMessage.Location = new System.Drawing.Point(42, 259);
+            this.richTextBoxMessage.Name = "richTextBoxMessage";
+            this.richTextBoxMessage.Size = new System.Drawing.Size(388, 224);
+            this.richTextBoxMessage.TabIndex = 9;
+            this.richTextBoxMessage.Text = "";
+            // 
             // FormPapyrus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 567);
+            this.ClientSize = new System.Drawing.Size(466, 514);
+            this.Controls.Add(this.richTextBoxMessage);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.labelDatabase);
             this.Controls.Add(this.labelServer);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonQuit);
+            this.Controls.Add(this.buttonDisconnect);
             this.Controls.Add(this.buttonConnect);
             this.Controls.Add(this.textBoxDatabase);
             this.Controls.Add(this.textBoxServer);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormPapyrus";
             this.Text = "Database connection";
@@ -155,12 +161,12 @@ namespace WinFormAppPapyrus
         private System.Windows.Forms.TextBox textBoxServer;
         private System.Windows.Forms.TextBox textBoxDatabase;
         private System.Windows.Forms.Button buttonConnect;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button buttonDisconnect;
+        private System.Windows.Forms.Button buttonQuit;
         private System.Windows.Forms.Label labelServer;
         private System.Windows.Forms.Label labelDatabase;
         private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.RichTextBox richTextBoxMessage;
     }
 }
 
