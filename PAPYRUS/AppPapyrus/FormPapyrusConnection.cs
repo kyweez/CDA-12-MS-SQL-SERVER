@@ -6,9 +6,8 @@ using System.Windows.Forms;
 
 namespace AppPapyrus
 {
-    public partial class FormPapyrus : Form
+    public partial class FormPapyrusConnection : Form
     {
-        private const string SERVER = "";
         private const string DATABASE_NAME = "db_papyrus";
 
         private SqlConnection SqlConnect
@@ -23,7 +22,7 @@ namespace AppPapyrus
             set;
         }
 
-        public FormPapyrus()
+        public FormPapyrusConnection()
         {
             InitializeComponent();
             SqlConnect = new SqlConnection();

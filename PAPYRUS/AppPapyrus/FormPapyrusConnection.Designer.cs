@@ -1,7 +1,7 @@
 ﻿
 namespace AppPapyrus
 {
-    partial class FormPapyrus
+    partial class FormPapyrusConnection
     {
         /// <summary>
         /// Required designer variable.
