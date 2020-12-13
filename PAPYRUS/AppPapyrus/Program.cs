@@ -16,7 +16,8 @@ namespace AppPapyrus
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPapyrusConnection());
+            //Application.Run(new FormPapyrusConnection());
+            Application.Run(new FormSupplierSearch());
         }
     }
 }

@@ -25,7 +25,7 @@ namespace AppPapyrus
             get; set;
         }
 
-        private SqlParameter CurrentSqlParameter
+        private SqlParameter SqlParameterSupplierId
         {
             get; set;
         }
@@ -40,6 +40,7 @@ namespace AppPapyrus
         {
             InitializeComponent();
             CurrentSqlConnection = new SqlConnection();
+            CurrentSqlCommand = new SqlCommand();
             ConfigString = ConfigurationManager.ConnectionStrings[DATABASE_NAME];
             if (ConfigString != null)
                 CurrentSqlConnection.ConnectionString = ConfigString.ConnectionString;
@@ -54,7 +55,34 @@ namespace AppPapyrus
         {
             try
             {
+                CurrentSqlConnection.Open();
+                CurrentSqlCommand.Connection = CurrentSqlConnection;
+                SqlParameterSupplierId = new SqlParameter("@id_supplier", DbType.Int32);
+                SqlParameterSupplierId.Value = textBoxSupplierId.Text;
+                CurrentSqlCommand.Parameters.Add(SqlParameterSupplierId);
+                CurrentSqlCommand.CommandType = CommandType.Text;
+                CurrentSqlCommand.CommandText = "SELECT * FROM t_suppliers WHERE id_supplier = @id_supplier";
+                CurrentSqlDataReader = CurrentSqlCommand.ExecuteReader();
 
+                if (CurrentSqlDataReader.HasRows)
+                {
+                    while (CurrentSqlDataReader.Read())
+                    {
+                        string name = CurrentSqlDataReader.GetString(1);
+                        string address = CurrentSqlDataReader.GetString(2);
+                        string zipcode = CurrentSqlDataReader.GetString(3);
+                        string city = CurrentSqlDataReader.GetString(4);
+                        string contactName;
+                        if (CurrentSqlDataReader.GetString(5) != null)
+                            contactName = CurrentSqlDataReader.GetString(5);
+                        else
+                            contactName = "";
+                        byte satisfaction = CurrentSqlDataReader.GetByte(6);
+
+                        FormSupplierDisplay result = new FormSupplierDisplay(name, address, zipcode, city, contactName, satisfaction);
+                        result.Show();
+                    }
+                }
             }
             catch (SqlException ex)
             {
@@ -64,7 +92,6 @@ namespace AppPapyrus
             {
                 CurrentSqlConnection.Close();
             }
-
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

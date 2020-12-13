@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormSupplierDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSupplierDisplay.Designer.cs">
+      <DependentUpon>FormSupplierDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSupplierSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormSupplierDisplay.resx">
+      <DependentUpon>FormSupplierDisplay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSupplierSearch.resx">
       <DependentUpon>FormSupplierSearch.cs</DependentUpon>
     </EmbeddedResource>
