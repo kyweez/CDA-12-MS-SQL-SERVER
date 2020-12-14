@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConnection.Designer.cs">
+      <DependentUpon>FormConnection.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSupplierDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,13 +71,28 @@
     <Compile Include="FormPapyrusConnection.Designer.cs">
       <DependentUpon>FormPapyrusConnection.cs</DependentUpon>
     </Compile>
+    <Compile Include="MDIPapyrus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIPapyrus.Designer.cs">
+      <DependentUpon>MDIPapyrus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormConnection.resx">
+      <DependentUpon>FormConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPapyrusConnection.resx">
+      <DependentUpon>FormPapyrusConnection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSupplierDisplay.resx">
       <DependentUpon>FormSupplierDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSupplierSearch.resx">
       <DependentUpon>FormSupplierSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIPapyrus.resx">
+      <DependentUpon>MDIPapyrus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,6 +115,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryBusinessClasses\ClassLibraryBusinessClasses.csproj">
+      <Project>{4e21750a-5216-4f7e-a15e-28cb29ac6924}</Project>
+      <Name>ClassLibraryBusinessClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibraryPersistence\ClassLibraryPersistence.csproj">
+      <Project>{8bdd2e24-5971-4b0f-be02-d92972a45c9d}</Project>
+      <Name>ClassLibraryPersistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibrarySQLServerDataAccess\ClassLibrarySQLServerDataAccess.csproj">
+      <Project>{b5d14904-39f9-46b9-94f6-0361f5845b9c}</Project>
+      <Name>ClassLibrarySQLServerDataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

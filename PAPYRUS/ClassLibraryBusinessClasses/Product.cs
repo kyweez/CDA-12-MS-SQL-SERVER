@@ -53,7 +53,7 @@ namespace ClassLibraryBusinessClasses
         #endregion
 
         #region ############### CONSTRUCTORS ###############
-        public Product(StructProduct _product, Supplier _supplier)
+        public Product(StructProduct _product)
         {
             Id = _product.Id;
             Label = _product.Label;
@@ -62,8 +62,10 @@ namespace ClassLibraryBusinessClasses
             AnnualOutput = _product.AnnualOutput;
             MeasurementUnit = _product.MeasurementUnit;
             Price = _product.Price;
-            SupplierInstance = _supplier;
+            //SupplierInstance = _supplier;
         }
         #endregion
     }
 }
+
+//redefinir equals

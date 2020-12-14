@@ -12,6 +12,7 @@
             AnnualOutput = _annualOutput;
             MeasurementUnit = _measurementUnit;
             Price = _price;
+            
         }
         #endregion
 

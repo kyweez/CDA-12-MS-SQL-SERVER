@@ -1,7 +1,7 @@
 ﻿
 namespace AppPapyrus
 {
-    partial class FormPapyrusConnection
+    partial class FormConnection
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,7 @@ namespace AppPapyrus
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxServer = new System.Windows.Forms.TextBox();
-            this.textBoxDatabase = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
             this.buttonConnect = new System.Windows.Forms.Button();
             this.buttonDisconnect = new System.Windows.Forms.Button();
             this.buttonQuit = new System.Windows.Forms.Button();
@@ -38,25 +37,11 @@ namespace AppPapyrus
             this.labelDatabase = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
             this.richTextBoxMessage = new System.Windows.Forms.RichTextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.comboBoxServer = new System.Windows.Forms.ComboBox();
+            this.comboBoxDataBase = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBoxServer
-            // 
-            this.textBoxServer.Location = new System.Drawing.Point(132, 35);
-            this.textBoxServer.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxServer.Name = "textBoxServer";
-            this.textBoxServer.Size = new System.Drawing.Size(298, 24);
-            this.textBoxServer.TabIndex = 0;
-            this.textBoxServer.TextChanged += new System.EventHandler(this.InputChanged);
-            // 
-            // textBoxDatabase
-            // 
-            this.textBoxDatabase.Location = new System.Drawing.Point(132, 97);
-            this.textBoxDatabase.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxDatabase.Name = "textBoxDatabase";
-            this.textBoxDatabase.Size = new System.Drawing.Size(298, 24);
-            this.textBoxDatabase.TabIndex = 1;
-            this.textBoxDatabase.TextChanged += new System.EventHandler(this.InputChanged);
             // 
             // buttonConnect
             // 
@@ -123,7 +108,6 @@ namespace AppPapyrus
             // 
             // richTextBoxMessage
             // 
-            this.richTextBoxMessage.Enabled = false;
             this.richTextBoxMessage.ForeColor = System.Drawing.Color.Red;
             this.richTextBoxMessage.Location = new System.Drawing.Point(42, 259);
             this.richTextBoxMessage.Name = "richTextBoxMessage";
@@ -131,11 +115,34 @@ namespace AppPapyrus
             this.richTextBoxMessage.TabIndex = 9;
             this.richTextBoxMessage.Text = "";
             // 
-            // FormPapyrusConnection
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
+            // comboBoxServer
+            // 
+            this.comboBoxServer.FormattingEnabled = true;
+            this.comboBoxServer.Location = new System.Drawing.Point(132, 31);
+            this.comboBoxServer.Name = "comboBoxServer";
+            this.comboBoxServer.Size = new System.Drawing.Size(298, 26);
+            this.comboBoxServer.TabIndex = 10;
+            // 
+            // comboBoxDataBase
+            // 
+            this.comboBoxDataBase.FormattingEnabled = true;
+            this.comboBoxDataBase.Location = new System.Drawing.Point(132, 89);
+            this.comboBoxDataBase.Name = "comboBoxDataBase";
+            this.comboBoxDataBase.Size = new System.Drawing.Size(298, 26);
+            this.comboBoxDataBase.TabIndex = 11;
+            // 
+            // FormConnection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(466, 514);
+            this.Controls.Add(this.comboBoxDataBase);
+            this.Controls.Add(this.comboBoxServer);
             this.Controls.Add(this.richTextBoxMessage);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.labelDatabase);
@@ -143,23 +150,19 @@ namespace AppPapyrus
             this.Controls.Add(this.buttonQuit);
             this.Controls.Add(this.buttonDisconnect);
             this.Controls.Add(this.buttonConnect);
-            this.Controls.Add(this.textBoxDatabase);
-            this.Controls.Add(this.textBoxServer);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "FormPapyrusConnection";
+            this.Name = "FormConnection";
             this.Text = "Database connection";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBoxServer;
-        private System.Windows.Forms.TextBox textBoxDatabase;
         private System.Windows.Forms.Button buttonConnect;
         private System.Windows.Forms.Button buttonDisconnect;
         private System.Windows.Forms.Button buttonQuit;
@@ -167,6 +170,8 @@ namespace AppPapyrus
         private System.Windows.Forms.Label labelDatabase;
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.RichTextBox richTextBoxMessage;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ComboBox comboBoxDataBase;
+        private System.Windows.Forms.ComboBox comboBoxServer;
     }
 }
-
