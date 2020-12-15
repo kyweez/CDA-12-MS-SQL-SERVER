@@ -33,9 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +55,12 @@
     <Compile Include="FormConnection.Designer.cs">
       <DependentUpon>FormConnection.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrderList.Designer.cs">
+      <DependentUpon>FormOrderList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSupplierDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,12 +73,6 @@
     <Compile Include="FormSupplierSearch.Designer.cs">
       <DependentUpon>FormSupplierSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPapyrusConnection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormPapyrusConnection.Designer.cs">
-      <DependentUpon>FormPapyrusConnection.cs</DependentUpon>
-    </Compile>
     <Compile Include="MDIPapyrus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,8 +84,8 @@
     <EmbeddedResource Include="FormConnection.resx">
       <DependentUpon>FormConnection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPapyrusConnection.resx">
-      <DependentUpon>FormPapyrusConnection.cs</DependentUpon>
+    <EmbeddedResource Include="FormOrderList.resx">
+      <DependentUpon>FormOrderList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSupplierDisplay.resx">
       <DependentUpon>FormSupplierDisplay.cs</DependentUpon>

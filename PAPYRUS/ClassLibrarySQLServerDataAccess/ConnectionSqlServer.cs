@@ -41,7 +41,7 @@ namespace ClassLibrarySQLServerDataAccess
         #endregion
 
         #region ############### EVENTS ###############
-        public delegate void DelegateConnectionStatus(ConnectionSqlServer sender);
+        public delegate void DelegateConnectionStatus();
         public event DelegateConnectionStatus StatusChanged;
 
         public delegate void DelegateConnectionFailed(string failedConnection);
@@ -56,9 +56,6 @@ namespace ClassLibrarySQLServerDataAccess
             //second cut
             int secondCut = substring.IndexOf(";");
             substring = substring.Substring(0, secondCut);
-            //insert slash
-            // int insertSlash = substring.IndexOf("\\");
-            // return substring.Insert(insertSlash, "\\");
             return substring;
         }
 
@@ -77,8 +74,7 @@ namespace ClassLibrarySQLServerDataAccess
 
         public bool ConnectToDatabase(string _serverName, string _dataBaseName)
         {
-            //SqlConnect.ConnectionString = $"Data Source={_serverName};Initial Catalog={_dataBaseName};Integrated Security=True";
-            SqlConnect.ConnectionString = $"Data Source=LAPTOP-C6FIRHG8\\SQLEXPRESS;Initial Catalog=db_papyrus;Integrated Security=True";
+            SqlConnect.ConnectionString = $"Data Source={_serverName};Initial Catalog={_dataBaseName};Integrated Security=True";
 
             try
             {
@@ -101,9 +97,15 @@ namespace ClassLibrarySQLServerDataAccess
             }
             finally
             {
-                StatusChanged(this);
+                StatusChanged();
             }
             return true;
+        }
+
+        public void DisconnectFromDatabase()
+        {
+            SqlConnect.Close();
+            StatusChanged();
         }
 
     }

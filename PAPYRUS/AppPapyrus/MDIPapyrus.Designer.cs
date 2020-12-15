@@ -81,7 +81,7 @@ namespace AppPapyrus
             // menuFileConnect
             // 
             this.menuFileConnect.Name = "menuFileConnect";
-            this.menuFileConnect.Size = new System.Drawing.Size(180, 22);
+            this.menuFileConnect.Size = new System.Drawing.Size(133, 22);
             this.menuFileConnect.Text = "Connect";
             this.menuFileConnect.Click += new System.EventHandler(this.Connect_Click);
             // 
@@ -89,18 +89,19 @@ namespace AppPapyrus
             // 
             this.menuFileDisconnect.Enabled = false;
             this.menuFileDisconnect.Name = "menuFileDisconnect";
-            this.menuFileDisconnect.Size = new System.Drawing.Size(180, 22);
+            this.menuFileDisconnect.Size = new System.Drawing.Size(133, 22);
             this.menuFileDisconnect.Text = "Disconnect";
+            this.menuFileDisconnect.Click += new System.EventHandler(this.Connect_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(130, 6);
             // 
             // menuFileExit
             // 
             this.menuFileExit.Name = "menuFileExit";
-            this.menuFileExit.Size = new System.Drawing.Size(180, 22);
+            this.menuFileExit.Size = new System.Drawing.Size(133, 22);
             this.menuFileExit.Text = "E&xit";
             this.menuFileExit.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
             // 
@@ -118,6 +119,7 @@ namespace AppPapyrus
             this.menuSuppliersSearchSupplier.Name = "menuSuppliersSearchSupplier";
             this.menuSuppliersSearchSupplier.Size = new System.Drawing.Size(163, 22);
             this.menuSuppliersSearchSupplier.Text = "Search a supplier";
+            this.menuSuppliersSearchSupplier.Click += new System.EventHandler(this.menuSuppliersSearchSupplier_Click);
             // 
             // ordersMenu
             // 
@@ -131,8 +133,9 @@ namespace AppPapyrus
             // menuOrdersList
             // 
             this.menuOrdersList.Name = "menuOrdersList";
-            this.menuOrdersList.Size = new System.Drawing.Size(122, 22);
+            this.menuOrdersList.Size = new System.Drawing.Size(180, 22);
             this.menuOrdersList.Text = "Order list";
+            this.menuOrdersList.Click += new System.EventHandler(this.menuOrdersList_Click);
             // 
             // productsMenu
             // 

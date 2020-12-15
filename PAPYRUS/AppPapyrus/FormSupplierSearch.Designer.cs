@@ -96,6 +96,7 @@ namespace AppPapyrus
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSupplierSearch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Supplier search";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFailCode)).EndInit();
             this.ResumeLayout(false);

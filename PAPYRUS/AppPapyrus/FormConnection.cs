@@ -22,11 +22,27 @@ namespace AppPapyrus
                 comboBoxServer.Items.Add(serverName);
             foreach (string dataBaseName in CurrentConnection.DataBaseNameList)
                 comboBoxDataBase.Items.Add(dataBaseName);
+            UpdateHMI();
         }
 
-        private void CurrentConnection_StatusChanged(ConnectionSqlServer sender)
+        private void UpdateHMI()
         {
+            if (CurrentConnection.SqlConnect.State == System.Data.ConnectionState.Open)
+            {
+                buttonConnect.Enabled = false;
+                buttonDisconnect.Enabled = true;
+            }
+            else
+            {
+                buttonConnect.Enabled = true;
+                buttonDisconnect.Enabled = false;
+            }
             labelStatus.Text = $"Connection status : {CurrentConnection.SqlConnect.State}";
+        }
+
+        private void CurrentConnection_StatusChanged()
+        {
+            UpdateHMI();
         }
 
         private void CurrentConnection_ConnectionFailed(string failedConnection)
@@ -36,17 +52,13 @@ namespace AppPapyrus
 
         private void buttonConnect_Click(object sender, EventArgs e)
         {
-            if (CurrentConnection.ConnectToDatabase(comboBoxServer.Text, comboBoxServer.Text))
+            if (CurrentConnection.ConnectToDatabase(comboBoxServer.Text, comboBoxDataBase.Text))
             {
-                buttonConnect.Enabled = false;
-                buttonDisconnect.Enabled = true;
                 richTextBoxMessage.Visible = false;
                 richTextBoxMessage.Clear();
             }
             else
             {
-                buttonConnect.Enabled = true;
-                buttonDisconnect.Enabled = false;
                 richTextBoxMessage.Visible = true;
                 CurrentConnection.SqlConnect.Close();
             }
@@ -54,15 +66,29 @@ namespace AppPapyrus
 
         private void buttonDisconnect_Click(object sender, EventArgs e)
         {
-            labelStatus.Text = $"Connection status : {CurrentConnection.SqlConnect.State}";
-            buttonConnect.Enabled = true;
-            buttonDisconnect.Enabled = false;
-            CurrentConnection.SqlConnect.Close();
+            CurrentConnection.DisconnectFromDatabase();
         }
 
         private void buttonQuit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void FormConnection_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (CurrentConnection.SqlConnect.State == System.Data.ConnectionState.Open)
+            {
+                DialogResult dialogResult = MessageBox.Show
+                (
+                    "Database  connection is still open",
+                    "Warning",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1
+                );
+                if (dialogResult == DialogResult.Cancel)
+                    e.Cancel = true;
+            }
         }
     }
 }

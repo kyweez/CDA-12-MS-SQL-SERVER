@@ -3,7 +3,7 @@
     public struct StructProduct
     {
         #region ############### CONSTRUCTOR ###############
-        public StructProduct(int _id, string _label, int _realStock, int _criticalStock, int _annualOutput, string _measurementUnit, float _price)
+        public StructProduct(int _id, string _label, int _realStock, int _criticalStock, int _annualOutput, string _measurementUnit, float _price, int _supplierId)
         {
             Id = _id;
             Label = _label;
@@ -12,7 +12,7 @@
             AnnualOutput = _annualOutput;
             MeasurementUnit = _measurementUnit;
             Price = _price;
-            
+            SupplierId = _supplierId;
         }
         #endregion
 
@@ -48,6 +48,11 @@
         }
 
         public float Price
+        {
+            get; private set;
+        }
+        
+        public int SupplierId
         {
             get; private set;
         }

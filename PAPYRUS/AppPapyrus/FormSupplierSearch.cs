@@ -36,12 +36,11 @@ namespace AppPapyrus
             set;
         }
 
-        public FormSupplierSearch()
+        public FormSupplierSearch(SqlConnection _sqlConnection)
         {
             InitializeComponent();
-            CurrentSqlConnection = new SqlConnection();
+            CurrentSqlConnection = _sqlConnection;
             CurrentSqlCommand = new SqlCommand();
-            ConfigString = ConfigurationManager.ConnectionStrings[DATABASE_NAME];
             if (ConfigString != null)
                 CurrentSqlConnection.ConnectionString = ConfigString.ConnectionString;
         }
@@ -55,7 +54,6 @@ namespace AppPapyrus
         {
             try
             {
-                CurrentSqlConnection.Open();
                 CurrentSqlCommand.Connection = CurrentSqlConnection;
                 SqlParameterSupplierId = new SqlParameter("@id_supplier", DbType.Int32);
                 SqlParameterSupplierId.Value = textBoxSupplierId.Text;
@@ -87,10 +85,6 @@ namespace AppPapyrus
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                CurrentSqlConnection.Close();
             }
         }
 
