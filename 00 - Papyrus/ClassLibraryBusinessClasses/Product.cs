@@ -1,6 +1,0 @@
-﻿using ClassLibraryPersistence;
-
-namespace ClassLibraryBusinessClasses
-{
-    
-}
