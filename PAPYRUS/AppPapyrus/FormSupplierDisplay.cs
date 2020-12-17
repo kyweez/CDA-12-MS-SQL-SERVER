@@ -13,7 +13,10 @@ namespace AppPapyrus
             textBoxZipCode.Text = _zipCode;
             textBoxCity.Text = _city;
             textBoxContact.Text = _contactName;
-            textBoxSatisfaction.Text = _satisfaction.ToString();
+            if (_satisfaction < 1)
+                textBoxSatisfaction.Text = "";
+            else
+                textBoxSatisfaction.Text = _satisfaction.ToString();
             AcceptButton = buttonBack;
             CancelButton = buttonBack;
         }

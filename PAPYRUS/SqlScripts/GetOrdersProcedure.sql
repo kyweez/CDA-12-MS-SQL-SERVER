@@ -1,8 +1,8 @@
 ﻿USE db_papyrus;
-DROP PROCEDURE GetOrderProcedure;
+DROP PROCEDURE GetSingleSupplierOrderProcedure;
 GO
 
-CREATE PROCEDURE GetOrderProcedure
+CREATE PROCEDURE GetSingleSupplierOrderProcedure
 	@id_supplier INT
 AS
 	SELECT id_order, order_date, order_comments, sup_name

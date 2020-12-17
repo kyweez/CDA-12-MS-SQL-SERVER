@@ -71,26 +71,39 @@ namespace AppPapyrus
                         string zipcode = CurrentSqlDataReader.GetString(3);
                         string city = CurrentSqlDataReader.GetString(4);
                         string contactName;
-                        if (CurrentSqlDataReader.GetString(5) != null)
+                        byte satisfaction;
+                        if (!CurrentSqlDataReader.IsDBNull(5))
                             contactName = CurrentSqlDataReader.GetString(5);
                         else
                             contactName = "";
-                        byte satisfaction = CurrentSqlDataReader.GetByte(6);
+                        if (!CurrentSqlDataReader.IsDBNull(6))
+                            satisfaction = CurrentSqlDataReader.GetByte(6);
+                        else
+                            satisfaction = 0;
 
                         FormSupplierDisplay result = new FormSupplierDisplay(name, address, zipcode, city, contactName, satisfaction);
                         result.Show();
                     }
+                }
+                else
+                {
+                    errorProviderFailCode.SetError(textBoxSupplierId, "This order doesn't exist");
                 }
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                CurrentSqlDataReader.Close();
+                CurrentSqlCommand.Parameters.Clear();
+            }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }

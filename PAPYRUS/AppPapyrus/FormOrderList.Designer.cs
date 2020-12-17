@@ -34,7 +34,7 @@ namespace AppPapyrus
             this.columnOrderId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnOrderDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnOrderComments = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnContactName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnSupplier = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonQuit = new System.Windows.Forms.Button();
             this.labelSupplier = new System.Windows.Forms.Label();
             this.labelOrders = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@ namespace AppPapyrus
             // comboBoxSupplierList
             // 
             this.comboBoxSupplierList.FormattingEnabled = true;
-            this.comboBoxSupplierList.Location = new System.Drawing.Point(189, 28);
+            this.comboBoxSupplierList.Location = new System.Drawing.Point(188, 34);
             this.comboBoxSupplierList.Name = "comboBoxSupplierList";
             this.comboBoxSupplierList.Size = new System.Drawing.Size(215, 26);
             this.comboBoxSupplierList.TabIndex = 0;
@@ -55,12 +55,12 @@ namespace AppPapyrus
             this.columnOrderId,
             this.columnOrderDate,
             this.columnOrderComments,
-            this.columnContactName});
+            this.columnSupplier});
             this.listViewResults.FullRowSelect = true;
             this.listViewResults.HideSelection = false;
-            this.listViewResults.Location = new System.Drawing.Point(35, 191);
+            this.listViewResults.Location = new System.Drawing.Point(34, 129);
             this.listViewResults.Name = "listViewResults";
-            this.listViewResults.Size = new System.Drawing.Size(567, 153);
+            this.listViewResults.Size = new System.Drawing.Size(553, 216);
             this.listViewResults.TabIndex = 1;
             this.listViewResults.UseCompatibleStateImageBehavior = false;
             this.listViewResults.View = System.Windows.Forms.View.Details;
@@ -68,26 +68,26 @@ namespace AppPapyrus
             // columnOrderId
             // 
             this.columnOrderId.Text = "Id";
-            this.columnOrderId.Width = 75;
+            this.columnOrderId.Width = 52;
             // 
             // columnOrderDate
             // 
             this.columnOrderDate.Text = "Date";
-            this.columnOrderDate.Width = 71;
+            this.columnOrderDate.Width = 91;
             // 
             // columnOrderComments
             // 
             this.columnOrderComments.Text = "Comments";
-            this.columnOrderComments.Width = 218;
+            this.columnOrderComments.Width = 153;
             // 
-            // columnContactName
+            // columnSupplier
             // 
-            this.columnContactName.Text = "Contact Name";
-            this.columnContactName.Width = 160;
+            this.columnSupplier.Text = "Supplier";
+            this.columnSupplier.Width = 190;
             // 
             // buttonQuit
             // 
-            this.buttonQuit.Location = new System.Drawing.Point(305, 392);
+            this.buttonQuit.Location = new System.Drawing.Point(488, 30);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(99, 33);
             this.buttonQuit.TabIndex = 2;
@@ -98,7 +98,7 @@ namespace AppPapyrus
             // labelSupplier
             // 
             this.labelSupplier.AutoSize = true;
-            this.labelSupplier.Location = new System.Drawing.Point(32, 31);
+            this.labelSupplier.Location = new System.Drawing.Point(31, 37);
             this.labelSupplier.Name = "labelSupplier";
             this.labelSupplier.Size = new System.Drawing.Size(124, 18);
             this.labelSupplier.TabIndex = 3;
@@ -107,7 +107,7 @@ namespace AppPapyrus
             // labelOrders
             // 
             this.labelOrders.AutoSize = true;
-            this.labelOrders.Location = new System.Drawing.Point(32, 161);
+            this.labelOrders.Location = new System.Drawing.Point(31, 95);
             this.labelOrders.Name = "labelOrders";
             this.labelOrders.Size = new System.Drawing.Size(54, 18);
             this.labelOrders.TabIndex = 4;
@@ -117,7 +117,7 @@ namespace AppPapyrus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 451);
+            this.ClientSize = new System.Drawing.Size(624, 382);
             this.Controls.Add(this.labelOrders);
             this.Controls.Add(this.labelSupplier);
             this.Controls.Add(this.buttonQuit);
@@ -142,6 +142,6 @@ namespace AppPapyrus
         private System.Windows.Forms.Button buttonQuit;
         private System.Windows.Forms.Label labelSupplier;
         private System.Windows.Forms.Label labelOrders;
-        private System.Windows.Forms.ColumnHeader columnContactName;
+        private System.Windows.Forms.ColumnHeader columnSupplier;
     }
 }
