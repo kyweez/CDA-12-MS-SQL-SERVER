@@ -4,8 +4,8 @@
 INSERT INTO t_suppliers
 (
 	sup_name, 
-	supp_address, 
-	supp_zipcode,
+	sup_address, 
+	sup_zipcode,
 	sup_city,
 	sup_contact_name,
 	sup_satisfaction

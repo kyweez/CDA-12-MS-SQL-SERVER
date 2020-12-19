@@ -117,7 +117,7 @@ namespace AppPapyrus
             // menuSuppliersSearchSupplier
             // 
             this.menuSuppliersSearchSupplier.Name = "menuSuppliersSearchSupplier";
-            this.menuSuppliersSearchSupplier.Size = new System.Drawing.Size(163, 22);
+            this.menuSuppliersSearchSupplier.Size = new System.Drawing.Size(180, 22);
             this.menuSuppliersSearchSupplier.Text = "Search a supplier";
             this.menuSuppliersSearchSupplier.Click += new System.EventHandler(this.menuSuppliersSearchSupplier_Click);
             // 

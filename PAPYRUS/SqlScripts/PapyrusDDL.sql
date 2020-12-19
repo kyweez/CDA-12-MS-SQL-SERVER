@@ -11,8 +11,8 @@ CREATE TABLE t_suppliers
 (
 	id_supplier INT IDENTITY(1,1) NOT NULL,
 	sup_name VARCHAR(50) NOT NULL,
-	supp_address VARCHAR(100) NOT NULL,
-	supp_zipcode CHAR(5) NOT NULL,
+	sup_address VARCHAR(100) NOT NULL,
+	sup_zipcode CHAR(5) NOT NULL,
 	sup_city VARCHAR(50) NOT NULL,
 	sup_contact_name VARCHAR(50),
 	sup_satisfaction TINYINT,
