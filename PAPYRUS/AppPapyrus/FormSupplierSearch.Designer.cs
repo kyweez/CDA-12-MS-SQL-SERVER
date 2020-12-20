@@ -121,6 +121,7 @@ namespace AppPapyrus
             this.buttonCreateSupplier.TabIndex = 2;
             this.buttonCreateSupplier.Text = "Create supplier";
             this.buttonCreateSupplier.UseVisualStyleBackColor = true;
+            this.buttonCreateSupplier.Click += new System.EventHandler(this.buttonCreateSupplier_Click);
             // 
             // FormSupplierSearch
             // 

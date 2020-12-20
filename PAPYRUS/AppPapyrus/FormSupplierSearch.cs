@@ -8,8 +8,11 @@ namespace AppPapyrus
 {
     public partial class FormSupplierSearch : Form
     {
+        #region ############### CONSTANT ###############
         private const string DATABASE_NAME = "db_papyrus";
+        #endregion
 
+        #region ############### PROPERTIES ###############
         private SqlConnection CurrentSqlConnection
         {
             get; set;
@@ -35,7 +38,9 @@ namespace AppPapyrus
             get;
             set;
         }
+        #endregion
 
+        #region ############### CONSTRUCTOR ###############
         public FormSupplierSearch(SqlConnection _sqlConnection)
         {
             InitializeComponent();
@@ -44,10 +49,18 @@ namespace AppPapyrus
             if (ConfigString != null)
                 CurrentSqlConnection.ConnectionString = ConfigString.ConnectionString;
         }
+        #endregion
 
-        private void textBoxSupplierId_TextChanged(object sender, EventArgs e)
+        #region ############### EVENTS ###############
+        private void buttonCancel_Click(object sender, EventArgs e)
         {
-            errorProviderFailCode.Clear();
+            Close();
+        }
+
+        private void buttonCreateSupplier_Click(object sender, EventArgs e)
+        {
+            FormSupplierDisplay creation = new FormSupplierDisplay();
+            creation.Show();
         }
 
         private void buttonValidate_Click(object sender, EventArgs e)
@@ -66,22 +79,23 @@ namespace AppPapyrus
                 {
                     while (CurrentSqlDataReader.Read())
                     {
-                        string name = CurrentSqlDataReader.GetString(1);
-                        string address = CurrentSqlDataReader.GetString(2);
-                        string zipcode = CurrentSqlDataReader.GetString(3);
-                        string city = CurrentSqlDataReader.GetString(4);
+                        int id = (int)CurrentSqlDataReader["id_supplier"];
+                        string name = CurrentSqlDataReader["sup_name"].ToString();
+                        string address = CurrentSqlDataReader["sup_address"].ToString();
+                        string zipcode = CurrentSqlDataReader["sup_zipcode"].ToString();
+                        string city = CurrentSqlDataReader["sup_city"].ToString();
                         string contactName;
                         byte satisfaction;
                         if (!CurrentSqlDataReader.IsDBNull(5))
-                            contactName = CurrentSqlDataReader.GetString(5);
+                            contactName = CurrentSqlDataReader["sup_contact_name"].ToString();
                         else
                             contactName = "";
                         if (!CurrentSqlDataReader.IsDBNull(6))
-                            satisfaction = CurrentSqlDataReader.GetByte(6);
+                            satisfaction = (byte)CurrentSqlDataReader["sup_satisfaction"];
                         else
                             satisfaction = 0;
 
-                        FormSupplierDisplay result = new FormSupplierDisplay(name, address, zipcode, city, contactName, satisfaction);
+                        FormSupplierDisplay result = new FormSupplierDisplay(id, name, address, zipcode, city, contactName, satisfaction);
                         result.Show();
                     }
                 }
@@ -101,9 +115,10 @@ namespace AppPapyrus
             }
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void textBoxSupplierId_TextChanged(object sender, EventArgs e)
         {
-            Close();
+            errorProviderFailCode.Clear();
         }
+        #endregion
     }
 }

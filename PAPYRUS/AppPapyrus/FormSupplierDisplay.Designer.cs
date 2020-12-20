@@ -29,6 +29,7 @@ namespace AppPapyrus
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.textBoxZipCode = new System.Windows.Forms.TextBox();
@@ -42,58 +43,82 @@ namespace AppPapyrus
             this.labelSatisfaction = new System.Windows.Forms.Label();
             this.buttonBack = new System.Windows.Forms.Button();
             this.labelIdentifier = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxId = new System.Windows.Forms.TextBox();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
+            this.errorProviderName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderAddress = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderZipCode = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderCity = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderContactName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderSatisfaction = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderZipCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderContactName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSatisfaction)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(191, 26);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(20);
+            this.textBoxName.MaxLength = 50;
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(243, 24);
+            this.textBoxName.Size = new System.Drawing.Size(279, 24);
             this.textBoxName.TabIndex = 0;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textBoxAddress
             // 
             this.textBoxAddress.Location = new System.Drawing.Point(191, 84);
             this.textBoxAddress.Margin = new System.Windows.Forms.Padding(20);
+            this.textBoxAddress.MaxLength = 100;
             this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(243, 24);
+            this.textBoxAddress.Size = new System.Drawing.Size(279, 24);
             this.textBoxAddress.TabIndex = 1;
+            this.textBoxAddress.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textBoxZipCode
             // 
             this.textBoxZipCode.Location = new System.Drawing.Point(191, 142);
             this.textBoxZipCode.Margin = new System.Windows.Forms.Padding(20);
+            this.textBoxZipCode.MaxLength = 5;
             this.textBoxZipCode.Name = "textBoxZipCode";
             this.textBoxZipCode.Size = new System.Drawing.Size(78, 24);
             this.textBoxZipCode.TabIndex = 2;
+            this.textBoxZipCode.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textBoxContact
             // 
             this.textBoxContact.Location = new System.Drawing.Point(191, 200);
             this.textBoxContact.Margin = new System.Windows.Forms.Padding(20);
+            this.textBoxContact.MaxLength = 50;
             this.textBoxContact.Name = "textBoxContact";
-            this.textBoxContact.Size = new System.Drawing.Size(243, 24);
+            this.textBoxContact.Size = new System.Drawing.Size(279, 24);
             this.textBoxContact.TabIndex = 3;
+            this.textBoxContact.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textBoxCity
             // 
-            this.textBoxCity.Location = new System.Drawing.Point(286, 142);
+            this.textBoxCity.Location = new System.Drawing.Point(322, 142);
             this.textBoxCity.Margin = new System.Windows.Forms.Padding(20);
+            this.textBoxCity.MaxLength = 50;
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(148, 24);
             this.textBoxCity.TabIndex = 4;
+            this.textBoxCity.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textBoxSatisfaction
             // 
             this.textBoxSatisfaction.Location = new System.Drawing.Point(191, 258);
             this.textBoxSatisfaction.Margin = new System.Windows.Forms.Padding(20);
+            this.textBoxSatisfaction.MaxLength = 1;
             this.textBoxSatisfaction.Name = "textBoxSatisfaction";
             this.textBoxSatisfaction.Size = new System.Drawing.Size(46, 24);
             this.textBoxSatisfaction.TabIndex = 5;
+            this.textBoxSatisfaction.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // labelName
             // 
@@ -147,7 +172,7 @@ namespace AppPapyrus
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(322, 359);
+            this.buttonBack.Location = new System.Drawing.Point(358, 322);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(20);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(112, 32);
@@ -166,19 +191,19 @@ namespace AppPapyrus
             this.labelIdentifier.TabIndex = 13;
             this.labelIdentifier.Text = "Identifier";
             // 
-            // textBox1
+            // textBoxId
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(388, 258);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(46, 24);
-            this.textBox1.TabIndex = 12;
+            this.textBoxId.Enabled = false;
+            this.textBoxId.Location = new System.Drawing.Point(388, 258);
+            this.textBoxId.Margin = new System.Windows.Forms.Padding(20);
+            this.textBoxId.Name = "textBoxId";
+            this.textBoxId.Size = new System.Drawing.Size(46, 24);
+            this.textBoxId.TabIndex = 12;
             // 
             // buttonUpdate
             // 
             this.buttonUpdate.Enabled = false;
-            this.buttonUpdate.Location = new System.Drawing.Point(32, 314);
+            this.buttonUpdate.Location = new System.Drawing.Point(32, 322);
             this.buttonUpdate.Margin = new System.Windows.Forms.Padding(20);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(112, 32);
@@ -188,7 +213,7 @@ namespace AppPapyrus
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(32, 359);
+            this.buttonDelete.Location = new System.Drawing.Point(191, 322);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(20);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(112, 32);
@@ -196,15 +221,45 @@ namespace AppPapyrus
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
             // 
+            // errorProviderName
+            // 
+            this.errorProviderName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderName.ContainerControl = this;
+            // 
+            // errorProviderAddress
+            // 
+            this.errorProviderAddress.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderAddress.ContainerControl = this;
+            // 
+            // errorProviderZipCode
+            // 
+            this.errorProviderZipCode.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderZipCode.ContainerControl = this;
+            // 
+            // errorProviderCity
+            // 
+            this.errorProviderCity.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderCity.ContainerControl = this;
+            // 
+            // errorProviderContactName
+            // 
+            this.errorProviderContactName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderContactName.ContainerControl = this;
+            // 
+            // errorProviderSatisfaction
+            // 
+            this.errorProviderSatisfaction.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderSatisfaction.ContainerControl = this;
+            // 
             // FormSupplierDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 416);
+            this.ClientSize = new System.Drawing.Size(519, 378);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.labelIdentifier);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelSatisfaction);
             this.Controls.Add(this.labelContactName);
@@ -223,6 +278,12 @@ namespace AppPapyrus
             this.Name = "FormSupplierDisplay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Supplier Display";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderZipCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderContactName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSatisfaction)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,8 +304,14 @@ namespace AppPapyrus
         private System.Windows.Forms.Label labelSatisfaction;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Label labelIdentifier;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.ErrorProvider errorProviderName;
+        private System.Windows.Forms.ErrorProvider errorProviderAddress;
+        private System.Windows.Forms.ErrorProvider errorProviderZipCode;
+        private System.Windows.Forms.ErrorProvider errorProviderCity;
+        private System.Windows.Forms.ErrorProvider errorProviderContactName;
+        private System.Windows.Forms.ErrorProvider errorProviderSatisfaction;
     }
 }
