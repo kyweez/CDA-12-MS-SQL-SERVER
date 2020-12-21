@@ -22,7 +22,6 @@ namespace ClassLibrarySQLServerDataAccess
         }
         #endregion
 
-
         #region ############### CONSTRUCTOR ###############
         public ConnectionSqlServer()
         {
@@ -48,6 +47,7 @@ namespace ClassLibrarySQLServerDataAccess
         public event DelegateConnectionFailed ConnectionFailed;
         #endregion
 
+        #region ############### METHODS ###############
         private string GetServerName(string _connectionString)
         {
             //first cut
@@ -104,9 +104,10 @@ namespace ClassLibrarySQLServerDataAccess
 
         public void DisconnectFromDatabase()
         {
-            SqlConnect.Close();
+             if (SqlConnect != null)
+                SqlConnect.Close();
             StatusChanged();
         }
-
+        #endregion
     }
 }

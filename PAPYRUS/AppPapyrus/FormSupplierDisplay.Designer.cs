@@ -44,7 +44,7 @@ namespace AppPapyrus
             this.buttonBack = new System.Windows.Forms.Button();
             this.labelIdentifier = new System.Windows.Forms.Label();
             this.textBoxId = new System.Windows.Forms.TextBox();
-            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonCreateUpdate = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.errorProviderName = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderAddress = new System.Windows.Forms.ErrorProvider(this.components);
@@ -97,7 +97,7 @@ namespace AppPapyrus
             this.textBoxContact.MaxLength = 50;
             this.textBoxContact.Name = "textBoxContact";
             this.textBoxContact.Size = new System.Drawing.Size(279, 24);
-            this.textBoxContact.TabIndex = 3;
+            this.textBoxContact.TabIndex = 4;
             this.textBoxContact.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textBoxCity
@@ -107,7 +107,7 @@ namespace AppPapyrus
             this.textBoxCity.MaxLength = 50;
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(148, 24);
-            this.textBoxCity.TabIndex = 4;
+            this.textBoxCity.TabIndex = 3;
             this.textBoxCity.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textBoxSatisfaction
@@ -127,7 +127,7 @@ namespace AppPapyrus
             this.labelName.Margin = new System.Windows.Forms.Padding(20);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(48, 18);
-            this.labelName.TabIndex = 6;
+            this.labelName.TabIndex = 10;
             this.labelName.Text = "Name";
             // 
             // labelAddress
@@ -137,7 +137,7 @@ namespace AppPapyrus
             this.labelAddress.Margin = new System.Windows.Forms.Padding(20);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(62, 18);
-            this.labelAddress.TabIndex = 7;
+            this.labelAddress.TabIndex = 11;
             this.labelAddress.Text = "Address";
             // 
             // labelZipCodeCity
@@ -147,7 +147,7 @@ namespace AppPapyrus
             this.labelZipCodeCity.Margin = new System.Windows.Forms.Padding(20);
             this.labelZipCodeCity.Name = "labelZipCodeCity";
             this.labelZipCodeCity.Size = new System.Drawing.Size(105, 18);
-            this.labelZipCodeCity.TabIndex = 8;
+            this.labelZipCodeCity.TabIndex = 12;
             this.labelZipCodeCity.Text = "Zip Code / City";
             // 
             // labelContactName
@@ -157,7 +157,7 @@ namespace AppPapyrus
             this.labelContactName.Margin = new System.Windows.Forms.Padding(20);
             this.labelContactName.Name = "labelContactName";
             this.labelContactName.Size = new System.Drawing.Size(101, 18);
-            this.labelContactName.TabIndex = 9;
+            this.labelContactName.TabIndex = 13;
             this.labelContactName.Text = "Contact name";
             // 
             // labelSatisfaction
@@ -167,7 +167,7 @@ namespace AppPapyrus
             this.labelSatisfaction.Margin = new System.Windows.Forms.Padding(20);
             this.labelSatisfaction.Name = "labelSatisfaction";
             this.labelSatisfaction.Size = new System.Drawing.Size(85, 18);
-            this.labelSatisfaction.TabIndex = 10;
+            this.labelSatisfaction.TabIndex = 14;
             this.labelSatisfaction.Text = "Satisfaction";
             // 
             // buttonBack
@@ -176,7 +176,7 @@ namespace AppPapyrus
             this.buttonBack.Margin = new System.Windows.Forms.Padding(20);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(112, 32);
-            this.buttonBack.TabIndex = 11;
+            this.buttonBack.TabIndex = 9;
             this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
@@ -198,18 +198,19 @@ namespace AppPapyrus
             this.textBoxId.Margin = new System.Windows.Forms.Padding(20);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(46, 24);
-            this.textBoxId.TabIndex = 12;
+            this.textBoxId.TabIndex = 6;
             // 
-            // buttonUpdate
+            // buttonCreateUpdate
             // 
-            this.buttonUpdate.Enabled = false;
-            this.buttonUpdate.Location = new System.Drawing.Point(32, 322);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(112, 32);
-            this.buttonUpdate.TabIndex = 14;
-            this.buttonUpdate.Text = "Update";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonCreateUpdate.Enabled = false;
+            this.buttonCreateUpdate.Location = new System.Drawing.Point(32, 322);
+            this.buttonCreateUpdate.Margin = new System.Windows.Forms.Padding(20);
+            this.buttonCreateUpdate.Name = "buttonCreateUpdate";
+            this.buttonCreateUpdate.Size = new System.Drawing.Size(112, 32);
+            this.buttonCreateUpdate.TabIndex = 7;
+            this.buttonCreateUpdate.Text = "Update";
+            this.buttonCreateUpdate.UseVisualStyleBackColor = true;
+            this.buttonCreateUpdate.Click += new System.EventHandler(this.buttonCreateUpdate_Click);
             // 
             // buttonDelete
             // 
@@ -217,9 +218,10 @@ namespace AppPapyrus
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(20);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(112, 32);
-            this.buttonDelete.TabIndex = 15;
+            this.buttonDelete.TabIndex = 8;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // errorProviderName
             // 
@@ -257,7 +259,7 @@ namespace AppPapyrus
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(519, 378);
             this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.buttonUpdate);
+            this.Controls.Add(this.buttonCreateUpdate);
             this.Controls.Add(this.labelIdentifier);
             this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.buttonBack);
@@ -305,7 +307,7 @@ namespace AppPapyrus
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Label labelIdentifier;
         private System.Windows.Forms.TextBox textBoxId;
-        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Button buttonCreateUpdate;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.ErrorProvider errorProviderName;
         private System.Windows.Forms.ErrorProvider errorProviderAddress;

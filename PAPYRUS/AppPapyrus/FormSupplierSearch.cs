@@ -59,7 +59,7 @@ namespace AppPapyrus
 
         private void buttonCreateSupplier_Click(object sender, EventArgs e)
         {
-            FormSupplierDisplay creation = new FormSupplierDisplay();
+            FormSupplierDisplay creation = new FormSupplierDisplay(CurrentSqlConnection);
             creation.Show();
         }
 
@@ -95,7 +95,7 @@ namespace AppPapyrus
                         else
                             satisfaction = 0;
 
-                        FormSupplierDisplay result = new FormSupplierDisplay(id, name, address, zipcode, city, contactName, satisfaction);
+                        FormSupplierDisplay result = new FormSupplierDisplay(CurrentSqlConnection, id, name, address, zipcode, city, contactName, satisfaction);
                         result.Show();
                     }
                 }

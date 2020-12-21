@@ -1,4 +1,5 @@
 ﻿USE db_papyrus
+DROP PROCEDURE AddSupplierProcedure
 GO
 CREATE PROCEDURE AddSupplierProcedure
 (
@@ -30,4 +31,5 @@ VALUES
 	@sup_satisfaction
 )
 SET @id_supplier = SCOPE_IDENTITY();
+RETURN @id_supplier;
 GO

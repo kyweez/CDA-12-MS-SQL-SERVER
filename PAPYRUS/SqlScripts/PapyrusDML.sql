@@ -11,8 +11,8 @@ INSERT INTO t_suppliers
 	sup_satisfaction
 )
 VALUES
-('PEUGEOT', '1449  Cameron Road', '76951', 'Beverly Hills', 'Bernard', 8),
-('RENAULT', '3018  Fieldcrest Road', '10016', 'San Antonio', 'Sophie', 10),
+('PEUGEOT', '1449  Cameron Road', '76951', 'Beverly Hills', 'Bernard', 2),
+('RENAULT', '3018  Fieldcrest Road', '10016', 'San Antonio', 'Sophie', 4),
 ('NISSAN', '1647  Lyon Avenue', '01752', 'Marlboro', null, 5),
 ('TOYOTA', '803  Pine Street', '16001', 'Butler', 'James ', 5),
 ('FORD', '49  John Daniel Drive', '63901', 'Poplar Bluff', null ,null);
