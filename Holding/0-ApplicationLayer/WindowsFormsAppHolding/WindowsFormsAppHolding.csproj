@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,14 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormSupplier.Designer.cs">
+      <DependentUpon>FormSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormSupplier.resx">
+      <DependentUpon>FormSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +79,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\PAPYRUS\ClassLibraryPersistence\ClassLibraryPersistence.csproj">
+      <Project>{8bdd2e24-5971-4b0f-be02-d92972a45c9d}</Project>
+      <Name>ClassLibraryPersistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\1-BusinessLayer\ClassLibraryBusinessLayer\ClassLibraryBusinessLayer.csproj">
+      <Project>{eec2ef02-289a-433a-95f9-bfedc6b187f3}</Project>
+      <Name>ClassLibraryBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3-InterfaceBusinessDatabaseLayer\ClassLibraryInterfaceBusinessDatabase\ClassLibraryInterfaceBusinessDatabase.csproj">
+      <Project>{4fbe952e-3f85-47f3-800f-6c21f08d2fb1}</Project>
+      <Name>ClassLibraryInterfaceBusinessDatabase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppHolding", "H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryInterfaceBusinessDatabase", "Holding\3-InterfaceBusinessDatabaseLayer\ClassLibraryInterfaceBusinessDatabase\ClassLibraryInterfaceBusinessDatabase.csproj", "{4FBE952E-3F85-47F3-800F-6C21F08D2FB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryBusinessLayer", "Holding\1-BusinessLayer\ClassLibraryBusinessLayer\ClassLibraryBusinessLayer.csproj", "{EEC2EF02-289A-433A-95F9-BFEDC6B187F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{4FBE952E-3F85-47F3-800F-6C21F08D2FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FBE952E-3F85-47F3-800F-6C21F08D2FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FBE952E-3F85-47F3-800F-6C21F08D2FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEC2EF02-289A-433A-95F9-BFEDC6B187F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEC2EF02-289A-433A-95F9-BFEDC6B187F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEC2EF02-289A-433A-95F9-BFEDC6B187F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEC2EF02-289A-433A-95F9-BFEDC6B187F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{69F2D70A-CA86-471A-86DB-1998CAE68A46} = {1F37B949-7590-4A8C-B95B-AF1330AFAA21}
 		{49CE0D5F-BCE8-489D-8E66-E26A6AD0AF5B} = {074102F4-294B-4AA9-AF3B-5A5F8A4FEEF4}
 		{4FBE952E-3F85-47F3-800F-6C21F08D2FB1} = {85862F2F-17E7-45D7-A401-BEB24A0FF4BD}
+		{EEC2EF02-289A-433A-95F9-BFEDC6B187F3} = {57A28BD6-7844-4C5A-9141-E74C88716846}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4AEF847D-225D-4994-85B5-DD512BD88E47}

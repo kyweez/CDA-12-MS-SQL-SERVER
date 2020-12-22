@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4FBE952E-3F85-47F3-800F-6C21F08D2FB1}</ProjectGuid>
+    <ProjectGuid>{EEC2EF02-289A-433A-95F9-BFEDC6B187F3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibraryInterfaceBusinessDatabase</RootNamespace>
-    <AssemblyName>ClassLibraryInterfaceBusinessDatabase</AssemblyName>
+    <RootNamespace>ClassLibraryBusinessLayer</RootNamespace>
+    <AssemblyName>ClassLibraryBusinessLayer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,9 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ISupplierCRUD.cs" />
-    <Compile Include="StructSupplier.cs" />
+    <Compile Include="Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\2-DatabaseLayer\ClassLibrarySQLServer\ClassLibrarySQLServer.csproj">
+      <Project>{69f2d70a-ca86-471a-86db-1998cae68a46}</Project>
+      <Name>ClassLibrarySQLServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3-InterfaceBusinessDatabaseLayer\ClassLibraryInterfaceBusinessDatabase\ClassLibraryInterfaceBusinessDatabase.csproj">
+      <Project>{4fbe952e-3f85-47f3-800f-6c21f08d2fb1}</Project>
+      <Name>ClassLibraryInterfaceBusinessDatabase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace ClassLibrarySQLServer.Supplier
 {
-    public class SupplierSQL
+    public class SupplierSQL : ISupplierCRUD
     {
         #region ############### PROPERTIES ###############
         private SqlConnection sqlConection;
@@ -114,7 +114,6 @@ namespace ClassLibrarySQLServer.Supplier
         {
             StructSupplier supplier;
             SqlCommand sqlCommand;
-            SqlDataReader sqlDataReader;
 
             if (sqlConection.State != ConnectionState.Open)
                 Open();
@@ -122,12 +121,12 @@ namespace ClassLibrarySQLServer.Supplier
             try
             {
                 SqlParameter idSupplier = new SqlParameter("@id_supplier", _idSupplier);
-                sqlCommand = new SqlCommand("SELECT * FROM t_suppliers WHERE id_supplier=@id_supplier", sqlConection);
+                sqlCommand = new SqlCommand("SELECT * FROM t_suppliers WHERE id_supplier=@id_supplier;", sqlConection);
                 sqlCommand.CommandType = CommandType.Text;
                 sqlCommand.Parameters.Add(idSupplier);
-                sqlDataReader = sqlCommand.ExecuteReader();
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
-                if (sqlDataReader.Read() && (int)sqlDataReader["idSupplier"] == _idSupplier)
+                if (sqlDataReader.Read() && (int)sqlDataReader["id_supplier"] == _idSupplier)
                 {
                     supplier = new StructSupplier(
                         (int)sqlDataReader["id_supplier"],
@@ -179,7 +178,7 @@ namespace ClassLibrarySQLServer.Supplier
                 sqlCommand.Parameters.Add(new SqlParameter("@sup_zipcode", _supplier.ZipCode));
                 sqlCommand.Parameters.Add(new SqlParameter("@sup_city", _supplier.City));
                 sqlCommand.Parameters.Add(new SqlParameter("@sup_contact_name", _supplier.ContactName ?? (object)DBNull.Value));
-                sqlCommand.Parameters.Add(new SqlParameter("@sup_satisfaction", _supplier.Satisfaction == 0 ? (object)DBNull.Value : _supplier.ContactName));
+                sqlCommand.Parameters.Add(new SqlParameter("@sup_satisfaction", _supplier.Satisfaction == 0 ? (object)DBNull.Value : _supplier.Satisfaction));
 
                 numberOfAffectedRows = sqlCommand.ExecuteNonQuery();
                 if (numberOfAffectedRows == 1)
