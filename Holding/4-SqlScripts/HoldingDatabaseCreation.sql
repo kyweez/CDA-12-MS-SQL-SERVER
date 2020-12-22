@@ -1,6 +1,6 @@
 ﻿--DROP DATABASE IF EXISTS db_holding;
 --GO
-CREATE DATABASE db_holding;
+--CREATE DATABASE db_holding;
 
 DROP TABLE IF EXISTS t_order_lines;
 DROP TABLE IF EXISTS t_products;
